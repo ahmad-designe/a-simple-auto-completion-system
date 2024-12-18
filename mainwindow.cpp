@@ -112,7 +112,7 @@ void MainWindow::inordertraversalandwrite(Nodebst* root, QTextStream& out) {
 QVector<QString> MainWindow::loadwordsfromfile() {
     QVector<QString> words;
     //qDebug() << "Current working directory: " << QDir::currentPath();
-    QFile file("C:\\Users\\client\\Documents\\acproject111\\sortedwords.txt");
+    QFile file("path:\\sortedwords.txt");
     if (!file.exists()) {
         QMessageBox::warning(this, "File Not Found", "sortedwords.txt was not found.");
         return words;
@@ -214,7 +214,7 @@ void MainWindow::searchtree(Nodebst* Nodebst, const QString& prefix, int numbero
 }
 //this to save our updated tree to the datafile
 void MainWindow::savewordstofile() {
-    QFile file("C:\\Users\\client\\Documents\\acproject111\\sortedwords.txt");  // Open the file
+    QFile file("path:\\sortedwords.txt");  // Open the file
     //qDebug() << "File operation at: " << __FILE__ << ":" << __LINE__;
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {  // Open the file for writing in text mode
         QMessageBox::warning(this, "System Failed", "The file could not be opened for writing!");  // If the file can't be opened, show a warning
